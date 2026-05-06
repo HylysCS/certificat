@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vérification de certificat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      background: #f0f0f0;
+      font-family: 'Nunito', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      min-height: 100dvh;
+      background: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 48px 28px 40px;
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #1a1a2e;
+      text-align: center;
+      margin-bottom: 40px;
+      line-height: 1.3;
+    }
+
+    .check-wrapper {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: #c8e6c9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 36px;
+      animation: popIn .5s cubic-bezier(.34,1.56,.64,1) both;
+    }
+
+    .check-svg {
+      width: 58px;
+      height: 58px;
+      stroke: #2e7d32;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .check-path {
+      stroke-dasharray: 70;
+      stroke-dashoffset: 70;
+      animation: drawCheck .45s ease .4s forwards;
+    }
+
+    .description {
+      font-size: 16px;
+      font-weight: 600;
+      color: #2c2c2c;
+      text-align: center;
+      line-height: 1.65;
+      margin-bottom: 44px;
+      padding: 0 4px;
+    }
+
+    .btn-quit {
+      width: 100%;
+      padding: 17px;
+      background: #2563c7;
+      color: #fff;
+      font-family: 'Nunito', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background .18s, transform .12s;
+    }
+
+    .btn-quit:hover  { background: #1a4faa; }
+    .btn-quit:active { background: #153e88; transform: scale(.98); }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(.5); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    @keyframes drawCheck {
+      to { stroke-dashoffset: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Vérification de certificat</h1>
+    <div class="check-wrapper">
+      <svg class="check-svg" viewBox="0 0 58 58">
+        <polyline class="check-path" points="10,30 23,43 48,16"/>
+      </svg>
+    </div>
+    <p class="description">
+      Certificat rédigé le 06/05/2026 par le docteur JENDRZEJEWSKI Julien au patient dont les initiales sont L.L, né(e) le 25/02/2004.
+    </p>
+    <button class="btn-quit" onclick="window.close(); history.back();">Quitter</button>
+  </div>
+</body>
+</html>
